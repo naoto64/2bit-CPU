@@ -157,7 +157,9 @@ ON  OFF ON  ON
 ```
 
 ## 回路図
-[![回路図](./img/schematic.jpg)](./img/schematic.jpg)
+[![回路図](./img/schematic01.jpg)](./img/schematic01.jpg)
+[![回路図](./img/schematic02.jpg)](./img/schematic02.jpg)
+[![回路図](./img/schematic03.jpg)](./img/schematic03.jpg)
 
 ## 実装図
 [![実装図](./img/implementation-diagram.jpg)](./img/implementation-diagram.jpg)
