@@ -1,15 +1,14 @@
-# 1bit CPU 組み立てキット
+# 2bit CPU 組み立てキット
 
 ## 概要
-4個のロジックICを使用した1bit CPUの組み立てキットです。
-超低性能なコンピュータのため、Lチカ、LED点灯、LED消灯のいずれかしかできません。
-世界トップクラスの低性能コンピュータです。
+11個のロジックICを使用した2bit CPUの組み立てキットです。
+
 
 電源はUSB Type-C端子です。ACアダプタ、ケーブルは付属しておりませんので別途ご用意ください。また、PowerDelivery等の給電には対応しておりませんのでご注意ください。
 
 ## 購入
 この製品は以下のサイトから購入できます。  
-[スイッチサイエンス - 1bit CPU 組み立てキット](https://www.switch-science.com/products/9376 "1bit CPU 組み立てキット")
+
 
 #### お問い合わせフォーム
 [製品に関するお問い合わせ](https://forms.gle/Fn5E3byABXJ8P5sbA)
@@ -18,7 +17,7 @@
 ## 使用方法
 ROM書き込みはDIPスイッチを切り替えることで可能です。
 
-DIPスイッチは上側がONです。プログラムで赤色LEDの点灯動作が変わります。赤色のリセットボタンを押すとリセットできます。
+DIPスイッチは上側がONです。プログラムでLEDのの点灯動作が変わります。赤色のリセットボタンを押すとリセットできます。
 
 ## スペック
 <table>
@@ -31,23 +30,23 @@ DIPスイッチは上側がONです。プログラムで赤色LEDの点灯動作
   <tbody>
     <tr>
         <td>汎用レジスタ</td>
-        <td>1bit x 1</td>
+        <td>2bit x 1</td>
     </tr>
     <tr>
         <td>アドレス空間</td>
-        <td>2bit</td>
-    </tr>
-    <tr>
-        <td>アドレスバス幅</td>
-        <td>1bit</td>
-    </tr>
-    <tr>
-        <td>ROM容量</td>
         <td>4bit</td>
     </tr>
     <tr>
+        <td>アドレスバス幅</td>
+        <td>2bit</td>
+    </tr>
+    <tr>
+        <td>ROM容量</td>
+        <td>16bit</td>
+    </tr>
+    <tr>
         <td>命令セット</td>
-        <td>ADD, JMP</td>
+        <td>ADD, IN, OUT, JNC</td>
     </tr>
     <tr>
         <td>プログラムカウンタ</td>
@@ -55,11 +54,11 @@ DIPスイッチは上側がONです。プログラムで赤色LEDの点灯動作
     </tr>
     <tr>
         <td>フラグレジスタ</td>
-        <td>未実装</td>
+        <td>1</td>
     </tr>
     <tr>
         <td>算術演算</td>
-        <td>1bitの加算（XOR）</td>
+        <td>2bitの加算</td>
     </tr>
     <tr>
         <td>クロック周波数</td>
@@ -67,7 +66,7 @@ DIPスイッチは上側がONです。プログラムで赤色LEDの点灯動作
     </tr>
     <tr>
         <td>IC総数</td>
-        <td>4個</td>
+        <td>11個</td>
     </tr>
   </tbody>
 </table>
@@ -88,9 +87,9 @@ DIPスイッチは上側がONです。プログラムで赤色LEDの点灯動作
         <td>AレジスタにIm（イミディエイトデータ）を加算する。</td>
     </tr>
     <tr>
-        <td>JMP Im</td>
+        <td>JNC Im</td>
         <td>1</td>
-        <td>Imで指定した先の番地へジャンプする。</td>
+        <td>Cフラグが0のとき、Imで示された番地へジャンプする。Cフラグが1のときは何もしない。</td>
     </tr>
   </tbody>
 </table>
