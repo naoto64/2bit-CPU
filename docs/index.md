@@ -17,7 +17,7 @@
 ## 使用方法
 ROM書き込みはDIPスイッチを切り替えることで可能です。
 
-DIPスイッチは上側がONです。プログラムでLEDのの点灯動作が変わります。赤色のリセットボタンを押すとリセットできます。
+DIPスイッチは上側がONです。プログラムでLEDのの点灯動作が変わります。トグルスイッチで1Hzのクロックか、マニュアルクロックかを切り替えできます。青色のボタンがマニュアルクロックです。赤色のリセットボタンを押すとリセットできます。
 
 ## スペック
 <table>
@@ -83,51 +83,77 @@ DIPスイッチは上側がONです。プログラムでLEDのの点灯動作が
   <tbody>
     <tr>
         <td>ADD A, Im</td>
-        <td>0</td>
-        <td>AレジスタにIm（イミディエイトデータ）を加算する。</td>
+        <td>00</td>
+        <td>AレジスタにIm（イミディエイトデータ）を加算する。実行後、キャリー発生時にCフラグを1にする。</td>
+    </tr>
+    <tr>
+        <td>IN A</td>
+        <td>01</td>
+        <td>入力ポートのデータをAレジスタに転送する。実行後、Cフラグを0にする。</td>
+    </tr>
+    <tr>
+        <td>OUT Im</td>
+        <td>10</td>
+        <td>Aレジスタを出力ポートに転送する。実行後、Cフラグを0にする。</td>
     </tr>
     <tr>
         <td>JNC Im</td>
-        <td>1</td>
-        <td>Cフラグが0のとき、Imで示された番地へジャンプする。Cフラグが1のときは何もしない。</td>
+        <td>11</td>
+        <td>Cフラグが0のとき、Imで示された番地へジャンプする。Cフラグが1のときは何もしない。実行後、Cフラグを0にする。</td>
     </tr>
   </tbody>
 </table>
 
 ## プログラム例
-#### Aレジスタに1を加算し続けるプログラム（Lチカ）
+#### 出力ポートをON/OFFさせるプログラム（Lチカ）
 ニモニック
 ```text:
-ADD A, 1
-JMP 0
+OUT 00
+OUT 00
+OUT 11
+JNC 00
 ```
 
 DIPスイッチ
 ```text:
-OFF　ON　ON　OFF
+ON  OFF  OFF OFF
+ON  OFF  OFF OFF
+ON  OFF  ON  ON
+ON  ON  OFF OFF
 ```
 
-#### Aレジスタに1を加算するだけのプログラム
+#### 入力ポートのどちらかがHIGHになると出力ポートをONにするプログラム
 ニモニック
 ```text:
-ADD A, 1
-JMP 1
+IN A
+ADD A, 11
+JNC 00
+OUT 11
 ```
 
 DIPスイッチ
 ```text:
-OFF　ON　ON　ON
+OFF ON  OFF OFF
+OFF OFF OFF ON
+ON  ON  OFF OFF
+ON  OFF ON ON
 ```
 
-#### 何もしないプログラム
+#### 13秒タイマー
 ニモニック
 ```text:
-JMP 0
+ADD A, 00
+ADD A, 01
+JNC 00
+OUT 11
 ```
 
 DIPスイッチ
 ```text:
-ON　OFF　ON　OFF
+OFF OFF OFF OFF
+OFF OFF OFF ON
+ON  ON  OFF OFF
+ON  OFF ON  ON
 ```
 
 ## 回路図
