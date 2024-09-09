@@ -116,9 +116,9 @@ JNC 00
 
 DIPスイッチ
 ```text:
-ON  OFF  OFF OFF
-ON  OFF  OFF OFF
-ON  OFF  ON  ON
+ON  OFF OFF OFF
+ON  OFF OFF OFF
+ON  OFF ON  ON
 ON  ON  OFF OFF
 ```
 
@@ -136,7 +136,7 @@ DIPスイッチ
 OFF ON  OFF OFF
 OFF OFF OFF ON
 ON  ON  OFF OFF
-ON  OFF ON ON
+ON  OFF ON  ON
 ```
 
 #### 13秒タイマー
