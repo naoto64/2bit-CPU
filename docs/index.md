@@ -162,9 +162,9 @@ ON  OFF ON  ON
 [![回路図](./img/schematic03.jpg)](./img/schematic03.jpg)
 
 ## 実装図
-[![実装図](./img/implementation-diagram.jpg)](./img/implementation-diagram01.jpg)
-[![実装図](./img/implementation-diagram.jpg)](./img/implementation-diagram02.jpg)
+[![実装図](./img/implementation-diagram01.jpg)](./img/implementation-diagram01.jpg)
+[![実装図](./img/implementation-diagram02.jpg)](./img/implementation-diagram02.jpg)
 
 ## 実装例
-[![実装例](./img/implementation-example.jpg)](./img/implementation-example01.jpg)
-[![実装例](./img/implementation-example.jpg)](./img/implementation-example02.jpg)
+[![実装例](./img/implementation-example01.jpg)](./img/implementation-example01.jpg)
+[![実装例](./img/implementation-example02.jpg)](./img/implementation-example02.jpg)
