@@ -13,8 +13,22 @@
 この製品は以下のサイトから購入できます。  
 [スイッチサイエンス - 2bit CPU 組み立てキット](https://www.switch-science.com/products/9955 "2bit CPU 組み立てキット")
 
-## 取扱説明書 
-[manual.pdf](./manual.pdf "取扱説明書")
+#### 取扱説明書
+
+<table>
+  <thead>
+    <tr>
+      <th>バージョン</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>最新版</td>
+        <td><a href="./manual_8202_20240919.pdf">manual_8202_20240919.pdf</a></td>
+    </tr>
+  </tbody>
+</table>
 
 #### お問い合わせフォーム
 [製品に関するお問い合わせ](https://forms.gle/Fn5E3byABXJ8P5sbA)
